@@ -273,6 +273,16 @@
     gap: var(--space-3);
   }
 
+  /* Marquee infinite scroll for mobile */
+  .marquee-track {
+    gap: 1.5rem;
+    animation: marquee 25s linear infinite;
+  }
+
+  .marquee-item {
+    font-size: var(--text-sm);
+  }
+
   /* Project cards */
   .project-card {
     border-radius: var(--radius-lg);
