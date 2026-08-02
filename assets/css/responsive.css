@@ -276,7 +276,7 @@
   /* Marquee infinite scroll for mobile */
   .marquee-track {
     gap: 1.5rem;
-    animation: marquee 70s linear infinite;
+    animation: marquee 130s linear infinite;
   }
 
   .marquee-item {
