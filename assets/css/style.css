@@ -2727,7 +2727,7 @@ p {
   display: flex;
   gap: 2.5rem;
   width: max-content;
-  animation: marquee 140s linear infinite;
+  animation: marquee 150s linear infinite;
 }
 
 .marquee-item {
