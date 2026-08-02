@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alameens.in/sitemap.xml
+
+# Disallow private paths
+Disallow: /assets/
+
+# Crawl delay (optional, for polite crawlers)
+Crawl-delay: 1

@@ -1,0 +1,561 @@
+/* ============================================================
+   AL AMEEN S. — Animations
+   alameens.in
+   ============================================================
+   TABLE OF CONTENTS
+   01. Keyframe Animations
+   02. Hero Animations
+   03. Section Reveal Animations
+   04. Loader Animations
+   05. Hover Animations
+   06. Continuous Animations
+   07. Text Animations
+   ============================================================ */
+
+/* ============================================================
+   01. KEYFRAME ANIMATIONS
+   ============================================================ */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Line reveal — used for hero name */
+@keyframes line-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mask-based reveal from bottom */
+@keyframes mask-reveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
+/* ============================================================
+   02. HERO ANIMATIONS
+   ============================================================ */
+
+/* Orbiting background blobs */
+@keyframes orb-float {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(20px, -20px) scale(1.05); }
+  66%  { transform: translate(-10px, 15px) scale(0.98); }
+  100% { transform: translate(10px, -10px) scale(1.02); }
+}
+
+/* Headline rotator slide */
+@keyframes headline-slide {
+  0%   { transform: translateY(0); }
+  15%  { transform: translateY(0); }
+  20%  { transform: translateY(-100%); }
+  35%  { transform: translateY(-100%); }
+  40%  { transform: translateY(-200%); }
+  55%  { transform: translateY(-200%); }
+  60%  { transform: translateY(-300%); }
+  75%  { transform: translateY(-300%); }
+  80%  { transform: translateY(-400%); }
+  95%  { transform: translateY(-400%); }
+  100% { transform: translateY(-500%); }
+}
+
+/* Floating particles */
+@keyframes particle-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  10% {
+    opacity: 0.6;
+    transform: translateY(-20px) scale(1);
+  }
+  90% {
+    opacity: 0.4;
+    transform: translateY(-120px) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-140px) scale(0.5);
+  }
+}
+
+/* Scroll line pulse */
+@keyframes scroll-line {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.4);
+    opacity: 0.4;
+  }
+}
+
+/* Pulsing dot */
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+/* ============================================================
+   03. SECTION REVEAL ANIMATIONS
+   ============================================================ */
+
+/* Staggered children reveal */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger-children.visible > *:nth-child(1)  { opacity: 1; transform: translateY(0); transition-delay: 0ms; }
+.stagger-children.visible > *:nth-child(2)  { opacity: 1; transform: translateY(0); transition-delay: 80ms; }
+.stagger-children.visible > *:nth-child(3)  { opacity: 1; transform: translateY(0); transition-delay: 160ms; }
+.stagger-children.visible > *:nth-child(4)  { opacity: 1; transform: translateY(0); transition-delay: 240ms; }
+.stagger-children.visible > *:nth-child(5)  { opacity: 1; transform: translateY(0); transition-delay: 320ms; }
+.stagger-children.visible > *:nth-child(6)  { opacity: 1; transform: translateY(0); transition-delay: 400ms; }
+.stagger-children.visible > *:nth-child(7)  { opacity: 1; transform: translateY(0); transition-delay: 480ms; }
+.stagger-children.visible > *:nth-child(8)  { opacity: 1; transform: translateY(0); transition-delay: 560ms; }
+
+/* Word-by-word text reveal */
+.word-reveal .word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.word-reveal .word-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.word-reveal.visible .word-inner {
+  transform: translateY(0);
+}
+
+.word-reveal .word:nth-child(1)  .word-inner { transition-delay: 0ms; }
+.word-reveal .word:nth-child(2)  .word-inner { transition-delay: 50ms; }
+.word-reveal .word:nth-child(3)  .word-inner { transition-delay: 100ms; }
+.word-reveal .word:nth-child(4)  .word-inner { transition-delay: 150ms; }
+.word-reveal .word:nth-child(5)  .word-inner { transition-delay: 200ms; }
+.word-reveal .word:nth-child(6)  .word-inner { transition-delay: 250ms; }
+.word-reveal .word:nth-child(7)  .word-inner { transition-delay: 300ms; }
+.word-reveal .word:nth-child(8)  .word-inner { transition-delay: 350ms; }
+.word-reveal .word:nth-child(9)  .word-inner { transition-delay: 400ms; }
+.word-reveal .word:nth-child(10) .word-inner { transition-delay: 450ms; }
+
+/* Character reveal */
+.char-reveal .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px) rotate(4deg);
+  transition: 
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.char-reveal.visible .char {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+/* ============================================================
+   04. LOADER ANIMATIONS
+   ============================================================ */
+
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ============================================================
+   05. HOVER ANIMATIONS
+   ============================================================ */
+
+/* Link underline slide */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::before,
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-underline::after {
+  transform-origin: left;
+  background: var(--color-accent);
+}
+
+.link-underline:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Image hover distortion */
+.img-hover-distort {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-hover-distort img {
+  transition: 
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s ease;
+}
+
+.img-hover-distort:hover img {
+  transform: scale(1.06);
+  filter: contrast(1.05);
+}
+
+/* Card tilt effect — applied via JS */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-slow);
+}
+
+.tilt-card-inner {
+  transform: translateZ(20px);
+}
+
+/* Glow on hover */
+.glow-hover {
+  transition: 
+    box-shadow var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.glow-hover:hover {
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   06. CONTINUOUS ANIMATIONS
+   ============================================================ */
+
+/* Marquee scroll */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Spinning border */
+@keyframes spin-border {
+  to { transform: rotate(360deg); }
+}
+
+/* Counter increment (used by JS) */
+.counter-value {
+  display: inline-block;
+  transition: transform 0.05s linear;
+}
+
+/* ============================================================
+   07. TEXT ANIMATIONS
+   ============================================================ */
+
+/* Typing cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--color-accent);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Text shimmer on hover */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-text-primary) 0%,
+    var(--color-accent) 40%,
+    var(--color-text-primary) 80%,
+    var(--color-text-primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+}
+
+.text-shimmer:hover {
+  background-position: right center;
+}
+
+/* Section number counter */
+@keyframes count-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Bounce subtle */
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(1deg); }
+  66%       { transform: translateY(-4px) rotate(-1deg); }
+}
+
+/* Ripple */
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Progress bar fill */
+@keyframes bar-fill {
+  from { width: 0; }
+}
+
+/* SVG path draw */
+@keyframes path-draw {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.path-animated {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.path-animated.visible {
+  stroke-dashoffset: 0;
+}
+
+/* Slide in from left */
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Scale pulse for accent elements */
+@keyframes scale-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+/* Soft appear */
+@keyframes soft-appear {
+  0%   { opacity: 0; transform: scale(0.96) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Project card number reveal */
+.project-number {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: var(--weight-extrabold);
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  transition: 
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.project-card:hover .project-number {
+  opacity: 0.15;
+  transform: translateX(4px);
+}
+
+/* Accent line animation */
+.accent-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-accent);
+  margin-bottom: var(--space-4);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible .accent-line,
+.visible .accent-line {
+  transform: scaleX(1);
+}
+
+/* Rotating ring (decorative) */
+@keyframes rotate-slow {
+  to { transform: rotate(360deg); }
+}
+
+.rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* Glimmer / sheen on hover */
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.sheen:hover::after {
+  left: 150%;
+}
+
+/* Spin slow */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
