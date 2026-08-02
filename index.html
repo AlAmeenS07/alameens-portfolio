@@ -332,25 +332,35 @@
           </div>
 
           <!-- Right: Photo Showcase Gallery -->
-          <div class="gallery-container" id="galleryContainer">
-            <!-- Big Main Featured Image -->
-            <div class="gallery-featured">
-              <img src="./assets/images/achievement-bestperf.jpg" alt="Al Ameen receiving Best Performer award" id="galleryFeaturedImg" class="featured-img" data-current="./assets/images/achievement-bestperf.jpg" />
-            </div>
-
-            <!-- 2x2 Grid of 4 smaller images -->
-            <div class="gallery-grid-four" id="galleryGrid">
-              <div class="gallery-small-item" data-img="./assets/me/WhatsApp Image 2026-08-01 at 8.49.20 PM (2).jpeg" data-alt="Al Ameen at the beach">
-                <img src="./assets/me/WhatsApp Image 2026-08-01 at 8.49.20 PM (2).jpeg" alt="Al Ameen at the beach" class="gallery-small-img" />
+          <div class="gallery-container">
+            <div class="gallery-grid">
+              <!-- Row 1: Achievement moment -->
+              <div class="gallery-item large tilt-card">
+                <div class="gallery-image-placeholder">
+                  <img src="./assets/images/achievement-bestperf.jpg" alt="Al Ameen receiving Best Performer award" class="gallery-img">
+                </div>
               </div>
-              <div class="gallery-small-item" data-img="./assets/me/AlAmeenS-portrait.jpeg" data-alt="Al Ameen outdoor portrait">
-                <img src="./assets/me/AlAmeenS-portrait.jpeg" alt="Al Ameen outdoor portrait" class="gallery-small-img" />
+              <!-- Row 2: Casual portraits -->
+              <div class="gallery-item tilt-card">
+                <div class="gallery-image-placeholder">
+                  <img src="./assets/me/WhatsApp Image 2026-08-01 at 8.49.20 PM (2).jpeg" alt="Al Ameen at the beach" class="gallery-img">
+                </div>
               </div>
-              <div class="gallery-small-item" data-img="./assets/images/achievement-award.jpg" data-alt="Performer of the Month plaque">
-                <img src="./assets/images/achievement-award.jpg" alt="Performer of the Month plaque" class="gallery-small-img" />
+              <div class="gallery-item tilt-card">
+                <div class="gallery-image-placeholder">
+                  <img src="./assets/me/AlAmeenS-portrait.jpeg" alt="Al Ameen outdoor portrait" class="gallery-img">
+                </div>
               </div>
-              <div class="gallery-small-item" data-img="./assets/images/portrait-bike.jpg" data-alt="Al Ameen with bike">
-                <img src="./assets/images/portrait-bike.jpg" alt="Al Ameen with bike" class="gallery-small-img" />
+              <!-- Row 3: Award plaque and bike -->
+              <div class="gallery-item tilt-card">
+                <div class="gallery-image-placeholder">
+                  <img src="./assets/images/achievement-award.jpg" alt="Performer of the Month plaque" class="gallery-img">
+                </div>
+              </div>
+              <div class="gallery-item tilt-card">
+                <div class="gallery-image-placeholder">
+                  <img src="./assets/images/portrait-bike.jpg" alt="Al Ameen with bike" class="gallery-img">
+                </div>
               </div>
             </div>
           </div>
@@ -401,45 +411,6 @@
     if (hamburger) hamburger.addEventListener('click', openMenu);
     if (mobileNavClose) mobileNavClose.addEventListener('click', closeMenu);
     mobileNavLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-    // Interactive Gallery: click small image → swaps to the big featured top image
-    const featuredImg = document.getElementById('galleryFeaturedImg');
-    const galleryGrid = document.getElementById('galleryGrid');
-
-    if (featuredImg && galleryGrid) {
-      galleryGrid.addEventListener('click', function(e) {
-        const item = e.target.closest('.gallery-small-item');
-        if (!item) return;
-
-        const clickedSrc = item.getAttribute('data-img');
-        const clickedAlt = item.getAttribute('data-alt');
-        const clickedThumbImg = item.querySelector('.gallery-small-img');
-
-        // Use data-current to reliably get the current featured src (avoids browser absolute URL issue)
-        const currentFeaturedSrc = featuredImg.getAttribute('data-current');
-        const currentFeaturedAlt = featuredImg.alt;
-
-        // Fade out
-        featuredImg.classList.add('switching');
-
-        setTimeout(() => {
-          // Swap the small item to hold the old featured image
-          item.setAttribute('data-img', currentFeaturedSrc);
-          item.setAttribute('data-alt', currentFeaturedAlt);
-          if (clickedThumbImg) {
-            clickedThumbImg.src = currentFeaturedSrc;
-            clickedThumbImg.alt = currentFeaturedAlt;
-          }
-
-          // Set new big featured image
-          featuredImg.src = clickedSrc;
-          featuredImg.alt = clickedAlt;
-          featuredImg.setAttribute('data-current', clickedSrc);
-
-          featuredImg.classList.remove('switching');
-        }, 180);
-      });
-    }
   </script>
 </body>
 </html>
