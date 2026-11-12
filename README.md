@@ -13,7 +13,7 @@ Live Demo: [alameens.in](https://alameens.in/)
 - **Modern & Premium Design System**: Crafted with custom HSL color palettes, subtle earth-tone aesthetics, sleek typography (Plus Jakarta Sans & Inter), and micro-animations.
 - **Hero & About Section**: Highlighting technical specialties, key philosophy, direct resume download, and social link cards.
 - **Skills Infinite Marquee**: Dynamic dual-track infinite marquee displaying core technologies, tools, and architecture principles.
-- **Career & Learning Journey**: Interactive horizontal timeline showcasing education, intense Brototype MERN training, and enterprise freelance experience.
+- **Career & Learning Journey**: Interactive horizontal timeline showcasing education, intensive Brototype MERN training, and enterprise freelance backend engineering (NewbStore & Enterprise Billing Software).
 - **Life & Achievements Showcase**: Highlighted awards and leadership roles:
   - **Overall Best Performer** (BroCamp)
   - **Team Lead of Project**
@@ -50,7 +50,7 @@ Portfolio/
 ├── manifest.json           # Web App Manifest
 ├── robots.txt              # Search engine crawling directives
 ├── sitemap.xml             # Search engine sitemap
-├── Al Ameen S 11LPA.pdf    # Resume document
+├── Al_Ameen_S_Software_Developer.pdf # Resume document
 ├── assets/
 │   ├── css/
 │   │   ├── style.css       # Core design system, layout & components
