@@ -87,6 +87,7 @@ npx serve .
 - **Website**: [alameens.in](https://alameens.in/)
 - **LinkedIn**: [linkedin.com/in/alameens07](https://linkedin.com/in/alameens07)
 - **GitHub**: [github.com/AlAmeenS07](https://github.com/AlAmeenS07)
+- **Medium**: [medium.com/@alameensameen77](https://medium.com/@alameensameen77)
 - **X (Twitter)**: [x.com/al_ameen_s](https://x.com/al_ameen_s)
 - **Instagram**: [instagram.com/alameens.in](https://www.instagram.com/alameens.in/)
 - **Email**: `alameensameen77@gmail.com`

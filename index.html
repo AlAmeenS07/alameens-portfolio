@@ -56,6 +56,7 @@ content="Al Ameen S is a Full Stack Developer from Kerala, India. Specializing i
     "sameAs":[
       "https://github.com/AlAmeenS07",
       "https://linkedin.com/in/alameens07",
+      "https://medium.com/@alameensameen77",
       "https://x.com/al_ameen_s",
       "https://www.instagram.com/alameens.in/"
       ]
@@ -138,6 +139,15 @@ content="Al Ameen S is a Full Stack Developer from Kerala, India. Specializing i
               </svg>
             </span>
             <span class="link-label">LinkedIn</span>
+          </a>
+          <a href="https://medium.com/@alameensameen77" target="_blank" rel="noopener noreferrer" class="link-card">
+            <span class="link-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.956l5.378 11.795 4.728-11.795h6.633v.403l-1.923 1.841c-.164.122-.244.32-.21.52v13.041c-.034.2-.046.398.21.52l1.883 1.841v.403h-9.453v-.403l1.943-1.881c.19-.19.19-.246.19-.52V8.583L11.83 21.07h-.735L5.05 8.583v8.553c-.044.385.084.771.352 1.047l2.56 3.109v.403H0v-.403l2.56-3.109c.262-.279.378-.669.314-1.056L2.846 6.887z" />
+              </svg>
+            </span>
+            <span class="link-label">Medium</span>
           </a>
           <a href="https://x.com/al_ameen_s" target="_blank" rel="noopener noreferrer" class="link-card">
             <span class="link-icon">
@@ -502,6 +512,26 @@ content="Al Ameen S is a Full Stack Developer from Kerala, India. Specializing i
     if (hamburger) hamburger.addEventListener('click', openMenu);
     if (mobileNavClose) mobileNavClose.addEventListener('click', closeMenu);
     mobileNavLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Live sync achievements gallery height with left list
+    function syncGalleryHeight() {
+      const list = document.querySelector('.achievements-list');
+      const gallery = document.querySelector('.gallery-grid');
+      if (!list || !gallery) return;
+      if (window.innerWidth > 991) {
+        gallery.style.height = list.offsetHeight + 'px';
+      } else {
+        gallery.style.height = '';
+      }
+    }
+    syncGalleryHeight();
+    window.addEventListener('resize', syncGalleryHeight, { passive: true });
+    window.addEventListener('load', syncGalleryHeight);
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(syncGalleryHeight);
+      const list = document.querySelector('.achievements-list');
+      if (list) ro.observe(list);
+    }
   </script>
 </body>
 
