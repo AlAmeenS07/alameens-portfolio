@@ -50,7 +50,7 @@ Portfolio/
 ├── manifest.json           # Web App Manifest
 ├── robots.txt              # Search engine crawling directives
 ├── sitemap.xml             # Search engine sitemap
-├── Al_Ameen_S_Software_Developer.pdf # Resume document
+├── Al Ameen S - Full Stack AI Engineer.pdf # Resume document
 ├── assets/
 │   ├── css/
 │   │   ├── style.css       # Core design system, layout & components
