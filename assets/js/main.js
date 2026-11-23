@@ -378,6 +378,29 @@
     });
   }
 
+  /* ── Sync Gallery Height with Left Achievements List ──── */
+  function initGallerySync() {
+    const list = document.querySelector('.achievements-list');
+    const gallery = document.querySelector('.gallery-grid');
+    if (!list || !gallery) return;
+
+    function sync() {
+      if (window.innerWidth > 991) {
+        gallery.style.height = `${list.offsetHeight}px`;
+      } else {
+        gallery.style.height = '';
+      }
+    }
+
+    sync();
+    window.addEventListener('resize', sync, { passive: true });
+    window.addEventListener('load', sync);
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(sync);
+      ro.observe(list);
+    }
+  }
+
   /* ── Init All ─────────────────────────────────────────── */
   function init() {
     initLoader();
@@ -394,6 +417,7 @@
     initKeyboardNav();
     initPageTransitions();
     initNewsletter();
+    initGallerySync();
 
     // Initialize other modules
     if (window.CursorModule) {

@@ -324,17 +324,32 @@
   .links-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-2.5);
+    gap: 0.625rem;
   }
 
   .link-card {
+    display: flex;
+    align-items: center;
     justify-content: center;
     width: 100%;
-    padding: var(--space-2.5) var(--space-3);
+    min-width: 0;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.85rem;
+    gap: 0.45rem;
   }
 
-  .link-card.highlight {
-    grid-column: span 2;
+  .link-icon {
+    flex-shrink: 0;
+  }
+
+  .link-icon svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+  }
+
+  .link-label {
+    white-space: nowrap;
   }
 
   /* Footer */
@@ -355,6 +370,36 @@
   .btn-lg {
     padding: 0.875rem 1.75rem;
     font-size: var(--text-sm);
+  }
+}
+
+/* ============================================================
+   EXTRA SMALL MOBILE (≤375px)
+   ============================================================ */
+
+@media (max-width: 375px) {
+  .links-grid {
+    gap: 0.45rem;
+  }
+
+  .link-card {
+    padding: 0.45rem 0.35rem;
+    font-size: 0.77rem;
+    gap: 0.35rem;
+  }
+
+  .link-icon {
+    flex-shrink: 0;
+  }
+
+  .link-icon svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .link-label {
+    white-space: nowrap;
   }
 }
 
